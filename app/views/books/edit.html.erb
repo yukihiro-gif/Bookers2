@@ -1,0 +1,34 @@
+<div class = "container">
+ <div class = "row">
+ 	<div class = "col-md-8">
+ 		<h2>Editing Book</h2>
+
+ 		<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <% end %>
+
+ 		<%= form_with model:@book, local:true do |f| %>
+			<label>Title</label>
+			<div class = "form_group">
+			 <%= f.text_field :title %>
+			</div>
+			<label>Opinion</label>
+			<div class = "a">
+			 <%= f.text_area :body%>
+			</div>
+			<div class = "form_group">
+			<%= f.submit "Update Book"%>
+			</div>
+			<% end %>
+            <%= link_to "Show",book_path %>
+            |
+            <%= link_to "Back",books_path %>
+
+
+
+ 	</div>
+ </div>
+</div>

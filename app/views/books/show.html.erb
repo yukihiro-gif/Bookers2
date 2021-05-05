@@ -1,0 +1,62 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-3">
+
+       <%= render 'books/list', book: @book, user: @books.user %>
+
+    </div>
+
+    <div class = "col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table>
+        <% if @user.id == @books.user.id %>
+          <tr>
+           <td class = "data1">
+            <%= attachment_image_tag @books.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+            <div>
+
+              <%= link_to @books.user.name,user_path(@books.user) %>
+
+            </div>
+           </td>
+           <td class = "data2">
+            <%= link_to @books.title,book_path(@books) %>
+           </td>
+           <td class = "data3">
+            <%= @books.body %>
+           </td>
+           <td class = "data4">
+           	<%= link_to "Edit",edit_book_path(@books) %>
+           </td>
+           <td class = "data4">
+           	<%= link_to "Destroy", destroy_book_path(@books.id), method: :delete, "data-confirm" => "本当に削除しますか？"  %>
+           </td>
+         </tr>
+        </table>
+
+         <% else %>
+        <table>
+         <tr>
+           <td class = "data1">
+            <%= attachment_image_tag @books.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+            <div>
+              <%= link_to @books.user.name,user_path(@books.user) %>
+            </div>
+           </td>
+           <td class = "data2">
+            <%= link_to @books.title,book_path(@books) %>
+           </td>
+           <td class = "data3">
+            <%= @books.body %>
+           </td>
+         </tr>
+       </table>
+       <% end %>
+    </div>
+  </div>
+ </div>

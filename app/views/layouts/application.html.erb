@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/[任意の文字列で生成].js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  <header>
+    <% if user_signed_in? %>
+    <nav class = "navbar navbar-expand-md navbar-dark bg-dark">
+     <nav class = "container" >
+      <a href = "https://8d2846c553a441b490ee7b08f4f9683b.vfs.cloud9.us-east-1.amazonaws.com/">
+        <h2>Bookers</h2>
+      </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+      <li class = "nav-item" >
+        <i class="fas fa-home">
+        <%= link_to "Home", user_path(current_user) %>
+        </i>
+      </li>
+      <li class = "nav-item" >
+        <i class="fas fa-users">
+        <%= link_to "Users", users_path %>
+        </i>
+      </li>
+      <li class = "nav-item" >
+        <i class="fas fa-book-open">
+        <%= link_to "Books", books_path %>
+        </i>
+      </li>
+      <li class = "nav-item" >
+        <i class="fas fa-sign-out-alt">
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        </i>
+      </li>
+     </ul>
+    </div>
+    </nav>
+    </nav>
+    <% else %>
+    <nav class = "navbar navbar-expand-md navbar-dark bg-dark">
+     <nav class = "container" >
+      <a href = "https://8d2846c553a441b490ee7b08f4f9683b.vfs.cloud9.us-east-1.amazonaws.com/">
+        <h2>Bookers</h2>
+      </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+      <li class = "nav-item" >
+        <i class="fas fa-home">
+        <%= link_to "Home", root_path %>
+        </i>
+      </li>
+
+      <li class = "nav-item" >
+        <i class="fas fa-link">
+        <%= link_to "About", home_about_path %>
+        </i>
+      </li>
+
+      <li class = "nav-item" >
+        <i class="fas fa-user-plus">
+        <%= link_to "sign up", new_user_registration_path %>
+        </i>
+      </li>
+      <li class = "nav-item" >
+        <i class="fas fa-sign-in-alt">
+        <%= link_to "Login", new_user_session_path %>
+        </i>
+      </li>
+     </ul>
+    </div>
+    </nav>
+    </nav>
+    <% end %>
+  </header>
+
+    <%= yield %>
+  <footer>
+    <div class = "container">
+      <div class = "row" >
+        <div class = "mx-auto">
+         <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </body>
+</html>

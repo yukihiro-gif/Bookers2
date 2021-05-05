@@ -1,0 +1,54 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table-css{
+ border-top: 2px solid #dee2e6;
+}
+
+.col-md-3{
+ max-width: 25%;
+}
+
+
+
+.table {
+ width: 780px;
+}
+
+.box1 {
+ width: 150px;
+ padding: 0;
+ border-top: 2px solid #dee2e6;
+ border-bottom: 2px solid #dee2e6;
+}
+.box2 {
+  width: 200px;
+  border-top: 2px solid #dee2e6;
+ border-bottom: 2px solid #dee2e6;
+}
+.box3{
+	width: 300px;
+	border-top: 2px solid #dee2e6;
+	border-bottom: 2px solid #dee2e6;
+}
+
+.data1{
+ width: 150px;
+ border-top: 2px solid #dee2e6;
+}
+.data2{
+ width: 230px;
+ text-left: center;
+ border-top: 2px solid #dee2e6;
+}
+.data3{
+ width: 300px;
+ text-left: center;
+ border-top: 2px solid #dee2e6;
+}
+.data4{
+ width: 100px;
+ text-align: center;
+ border-top: 2px solid #dee2e6;
+}

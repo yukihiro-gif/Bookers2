@@ -1,0 +1,31 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-5 mx-auto">
+			<h2>User info</h2>
+			<% if @user.errors.any? %>
+   <%= @user.errors.count %>件のエラーが発生しました
+   <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+   <% end %>
+   <% end %>
+			<%= form_with model:@user, local:true do |f| %>
+		 <label>Name</label>
+			<div class = "a">
+			 <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+			</div>
+			<label>Image</label>
+			<div class = "form_group">
+			 <%= f.attachment_field :profile_image %>
+			</div>
+			<label>Introduction</label>
+			<div class = "a">
+			 <%= f.text_area :introduction %>
+			</div>
+			<div class = "form_group">
+			<%= f.submit "Update User"%>
+			</div>
+			<% end %>
+
+		</div>
+	</div>
+</div>
