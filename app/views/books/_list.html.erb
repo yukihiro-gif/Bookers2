@@ -11,20 +11,9 @@
        </tr>
       </table>
        <div class = "row">
-       <% if user.id == current_user.id %>
-
 
        <%= link_to edit_user_path(user),class: "btn btn-outline-secandary" do %>
        <i class="fas fa-user-cog"></i>
-       <% end %>
-
-
-       <% else %>
-
-       <%= link_to user_path(current_user),class: "btn btn-outline-secandary" do %>
-       <i class="fas fa-user-cog"></i>
-       <% end %>
-
        <% end %>
 
        </div>
