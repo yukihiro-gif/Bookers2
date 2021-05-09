@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
 before_action :authenticate_user!
+before_action :correct_post,only: [:edit]
 
 def create
     @book = Book.new(book_params)
@@ -58,6 +59,15 @@ end
    book.destroy
    redirect_to books_path
   end
+
+
+def correct_post
+        @book = Book.find(params[:id])
+    unless @book.user.id == current_user.id
+      redirect_to books_path
+    end
+end
+
 
 
 private

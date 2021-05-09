@@ -1,9 +1,9 @@
 <div class = "container">
  <div class = "row">
- 	<div class = "col-md-8">
+ 	<div class = "col-md-5 mx-auto">
  		<h2>Editing Book</h2>
 
- 		<% if @book.errors.any? %>
+  <% if @book.errors.any? %>
   <%= @book.errors.count %>件のerrorが発生しました
   <% @book.errors.full_messages.each do |message| %>
     <%= message %>
@@ -16,10 +16,10 @@
 			 <%= f.text_field :title %>
 			</div>
 			<label>Opinion</label>
-			<div class = "a">
-			 <%= f.text_area :body%>
-			</div>
 			<div class = "form_group">
+			 <%= f.text_area :body, size: "54✖70" %>
+			</div>
+			<div>
 			<%= f.submit "Update Book"%>
 			</div>
 			<% end %>
